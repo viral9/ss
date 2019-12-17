@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/_20sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_10sdp"
+    app:cardMaxElevation="@dimen/_20sdp"
+    android:background="@drawable/a"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_75sdp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@drawable/a"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SAMPLE1"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            android:id="@+id/tvstudentname"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#2ca92a"
+            android:padding="@dimen/_2sdp"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAMPLE2"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        android:id="@+id/tvstudentroll"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#2ca92a"
+        android:padding="@dimen/_2sdp"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAMPLE2"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            android:id="@+id/tvstudentdob"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#2ca92a"
+            android:padding="@dimen/_2sdp"
+            />
+    </LinearLayout>
+
+
+
+
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvstud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hello"
+            android:textSize="@dimen/_15ssp">
+
+        </TextView>
+    </LinearLayout> -->
+
+</androidx.cardview.widget.CardView>

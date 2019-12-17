@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+ <!-- <TextView
+        android:id="@+id/tvage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="age"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299" />
+
+    >-->
+
+ <Button
+     android:id="@+id/btnsub"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+
+     android:layout_marginBottom="140dp"
+     android:background="#87ceeb"
+     android:elevation="@dimen/_20sdp"
+     android:padding="@dimen/_5sdp"
+     android:text="submit"
+     android:textSize="@dimen/_20ssp"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+
+     />
+
+ <!-- <Button
+        android:id="@+id/btncard"
+        android:layout_width="144dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginBottom="64dp"
+        android:text="Add card"
+        android:textSize="@dimen/_20ssp"
+        android:background="#87ceeb"
+        android:padding="@dimen/_5sdp"
+        android:elevation="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />-->
+
+ <Button
+     android:id="@+id/btnclear"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+
+     android:layout_marginBottom="68dp"
+     android:background="#87ceeb"
+     android:elevation="@dimen/_20sdp"
+     android:padding="@dimen/_5sdp"
+     android:text="clear"
+     android:textSize="@dimen/_20ssp"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.5"
+     app:layout_constraintStart_toStartOf="parent" />
+
+ <EditText
+     android:id="@+id/etname"
+     android:layout_width="285dp"
+     android:layout_height="67dp"
+     android:layout_marginTop="@dimen/_100sdp"
+     android:layout_marginEnd="@dimen/_60sdp"
+     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+     android:ems="10"
+
+
+     android:hint="name"
+     android:textSize="@dimen/_20ssp"
+     app:layout_constraintBottom_toTopOf="@+id/etrollno"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintTop_toTopOf="parent" />
+
+ <EditText
+     android:id="@+id/etrollno"
+     android:layout_width="278dp"
+     android:layout_height="64dp"
+     android:layout_marginTop="12dp"
+     android:layout_marginEnd="@dimen/_60sdp"
+     android:ems="10"
+     android:hint="rollno"
+     android:inputType="number"
+     android:textSize="@dimen/_20ssp"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/etname"
+
+     />
+
+ <TextView
+     android:id="@+id/tvdob"
+     android:layout_width="214dp"
+     android:layout_height="48dp"
+     android:layout_marginTop="20dp"
+     android:layout_marginRight="@dimen/_20sdp"
+     android:layout_marginBottom="@dimen/_50sdp"
+     android:text="Add DOB"
+     android:textSize="@dimen/_20ssp"
+     app:layout_constraintBottom_toTopOf="@+id/btnsub"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.345"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/etrollno"
+     app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
