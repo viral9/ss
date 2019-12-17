@@ -33,6 +33,7 @@ public class contactActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
         listViewcontact = findViewById(R.id.lvcontact);
 
+
         arrayList=new ArrayList<>();
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
         {
@@ -88,6 +89,17 @@ public class contactActivity extends AppCompatActivity {
     }
 
     private void getContact() {
+        Cursor cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,null,null,null);
+        while (cursor.moveToNext())
+        {
+            String name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+            String num = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+            arrayList.add(name+"\n"+num);
+
+            ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,arrayList);
+            listViewcontact.setAdapter(arrayAdapter);
+            arrayAdapter.notifyDataSetChanged();
+        }
 
     }
 
