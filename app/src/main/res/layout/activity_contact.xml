@@ -7,13 +7,26 @@
     tools:context=".contactActivity">
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_500sdp"
         android:id="@+id/lvcontact"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_400sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.074" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="get"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lvcontact"
+        app:layout_constraintVertical_bias="0.17" />
 </androidx.constraintlayout.widget.ConstraintLayout>
