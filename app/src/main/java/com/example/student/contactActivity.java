@@ -110,7 +110,7 @@ public class contactActivity extends AppCompatActivity {
         {
             if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
             {
-
+                getContact();
             }
         }
     }
