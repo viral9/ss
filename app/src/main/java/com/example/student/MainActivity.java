@@ -263,6 +263,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(galleryintent, gallary);
 
+        /*BitmapDrawable drawable = (BitmapDrawable) imageviewmain.getDrawable();
+        Bitmap bitmap1 = drawable.getBitmap();
+
+        //String[] filepath = {MediaStore.Images.Media.DATA};
+        File filepath = Environment.getExternalStorageDirectory();
+        File dir = new File(filepath.getAbsolutePath()+"/image/");
+        dir.mkdir();
+        File file = new File(dir,System.currentTimeMillis()+".jpg");
+        try {
+            outputStream =  new FileOutputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        bitmap1.compress(Bitmap.CompressFormat.JPEG,100,outputStream);*/
+
     }
 
     @Override
@@ -270,22 +285,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode== gallary)
         {
-            /*BitmapDrawable drawable = (BitmapDrawable) imageviewmain.getDrawable();
-            Bitmap bitmap1 = drawable.getBitmap();
 
-            //String[] filepath = {MediaStore.Images.Media.DATA};
-            File filepath = Environment.getExternalStorageDirectory();
-            File dir = new File(filepath.getAbsolutePath()+"/image/");
-            dir.mkdir();
-            File file = new File(dir,System.currentTimeMillis()+".jpg");
-            try {
-                outputStream =  new FileOutputStream(file);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            bitmap1.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT); intent.setType("img/*");
-            startActivityForResult(intent, ;*/
+           // Intent intent = new Intent(Intent.ACTION_GET_CONTENT); intent.setType("img/*");
+            //startActivityForResult(intent, ;
 
 
             //filepath.toString();
@@ -294,6 +296,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),contentUri);
                 imageviewmain.setImageBitmap(bitmap);
+                BitmapDrawable drawable = (BitmapDrawable) imageviewmain.getDrawable();
+                Bitmap bitmap1 = drawable.getBitmap();
+
+                //String[] filepath = {MediaStore.Images.Media.DATA};
+                File filepath = Environment.getExternalStorageDirectory();
+                File dir = new File(filepath.getAbsolutePath()+"/image/");
+                dir.mkdir();
+                File file = new File(dir,System.currentTimeMillis()+".jpg");
+                try {
+                    outputStream =  new FileOutputStream(file);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                bitmap1.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
 
             } catch (IOException e) {
                 e.printStackTrace();
