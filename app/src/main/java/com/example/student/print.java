@@ -37,6 +37,7 @@ public class print extends AppCompatActivity implements View.OnClickListener {
     ArrayList<card> datalist = new ArrayList<>();
     String s = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
