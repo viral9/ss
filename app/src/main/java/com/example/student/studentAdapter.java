@@ -1,14 +1,18 @@
 package com.example.student;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class studentAdapter extends RecyclerView.Adapter<studentAdapter.viewholder> {
@@ -41,6 +45,11 @@ public class studentAdapter extends RecyclerView.Adapter<studentAdapter.viewhold
         holder.tvstudentname.setText(current.getStuddata());
         holder.tvstudentroll.setText(current.getRoll());
         holder.studentdob.setText(current.getBod());
+        String filepath;
+        filepath = current.getFpath();
+        File img = new File(filepath);
+        Bitmap mybim = BitmapFactory.decodeFile(img.getAbsolutePath());
+        holder.imagecard.setImageBitmap(mybim);
 
     }
 
@@ -52,6 +61,7 @@ public class studentAdapter extends RecyclerView.Adapter<studentAdapter.viewhold
     public static class viewholder extends RecyclerView.ViewHolder
     {
         TextView tvstudentname,tvstudentroll,studentdob;
+        ImageView imagecard;
 
 
         public viewholder(@NonNull View itemView, final OnItemClickLisne lisne) {
@@ -59,6 +69,7 @@ public class studentAdapter extends RecyclerView.Adapter<studentAdapter.viewhold
             tvstudentname = itemView.findViewById(R.id.tvstudentname);
             tvstudentroll = itemView.findViewById(R.id.tvstudentroll);
             studentdob = itemView.findViewById(R.id.tvstudentdob);
+            imagecard = itemView.findViewById(R.id.imagecard);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textView, tvDob;
     ImageView imageviewmain;
     Button btnSubmit,bnprint,btnclr,btncard,btnimage;
-    String name,age,roll,dob;
+    String name,age,roll,dob,filestrpath;
     int gallary = 1,camera = 2;
     int c_month,c_year,c_day;
     OutputStream outputStream;
@@ -114,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         name = etName.getText().toString();
         roll = etRollNo.getText().toString();
         dob = tvDob.getText().toString();
+        Drawable drawable = this.getResources().getDrawable(R.drawable.s_profile_place_holder);
         if(name == null || name.isEmpty())
         {
             etName.setError("enter name");
@@ -139,6 +141,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             etName.setError("enter correct");
             return;
         }
+
+        /*else if(imageviewmain.setImageBitmap(null) == drawable)
+        {
+            Toast.makeText(this, "Add Image", Toast.LENGTH_SHORT).show();
+        }*/
         else
         {
             Toast.makeText(MainActivity.this,"submit successful",Toast.LENGTH_LONG).show();
@@ -146,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             i.putExtra("name",name);
             i.putExtra("roll",roll);
             i.putExtra("dob",dob);
+            i.putExtra("filepath",filestrpath);
             setResult(RESULT_OK,i);
             //startActivity(i);
             finish();
@@ -302,8 +310,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //String[] filepath = {MediaStore.Images.Media.DATA};
                 File filepath = Environment.getExternalStorageDirectory();
                 File dir = new File(filepath.getAbsolutePath()+"/image/");
+
                 dir.mkdir();
                 File file = new File(dir,System.currentTimeMillis()+".jpg");
+                filestrpath = file.getPath();
+                Toast.makeText(this, filestrpath, Toast.LENGTH_SHORT).show();
                 try {
                     outputStream =  new FileOutputStream(file);
                 } catch (FileNotFoundException e) {
@@ -320,7 +331,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             Bitmap bitmapcamera = (Bitmap) data.getExtras().get("data");
             imageviewmain.setImageBitmap(bitmapcamera);
+            BitmapDrawable drawable = (BitmapDrawable) imageviewmain.getDrawable();
+            Bitmap bitmap1 = drawable.getBitmap();
 
+            //String[] filepath = {MediaStore.Images.Media.DATA};
+            File filepath = Environment.getExternalStorageDirectory();
+            File dir = new File(filepath.getAbsolutePath()+"/image/");
+            dir.mkdir();
+            File file = new File(dir,System.currentTimeMillis()+".jpg");
+            try {
+                outputStream =  new FileOutputStream(file);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            bitmap1.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
 
         }
     }

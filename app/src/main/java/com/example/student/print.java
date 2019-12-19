@@ -34,6 +34,7 @@ public class print extends AppCompatActivity implements View.OnClickListener {
     //ListView lvStudent;
     //ArrayList<String> arrayList;
     //ArrayAdapter<String> adapter;
+    String filepath;
     ArrayList<card> datalist = new ArrayList<>();
     String s = null;
 
@@ -81,10 +82,11 @@ public class print extends AppCompatActivity implements View.OnClickListener {
                 name = data.getStringExtra("name");
                  roll = data.getStringExtra("roll");
                  dob = data.getStringExtra("dob");
+                 filepath = data.getStringExtra("filepath");
 
                     //s = "name:- "+name+"\nroll:- "+roll+"\ndob:- "+dob;
                     //datalist.add(new card("add"+s));
-                   c("name:-"+name,"roll:-"+roll,"DOB"+dob);
+                   c("name:-"+name,"roll:-"+roll,"DOB"+dob,filepath);
 
 
                 //tvStudentData.append("\n\nname:- "+name+"\nroll:- "+roll+"\ndob:- "+dob);
@@ -100,7 +102,7 @@ public class print extends AppCompatActivity implements View.OnClickListener {
     {
         datalist.get(position).change(text);
     }
-    private void c(final String name, final String roll, final String dob) {
+    private void c(final String name, final String roll, final String dob,final  String fpath) {
 
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
@@ -108,7 +110,7 @@ public class print extends AppCompatActivity implements View.OnClickListener {
         recadapter = new studentAdapter(datalist);
         recyclerView.setLayoutManager(layour);
         recyclerView.setAdapter(recadapter);
-        datalist.add(new card(name,roll,dob));
+        datalist.add(new card(name,roll,dob,fpath));
         recadapter.notifyDataSetChanged();
         recadapter.setOnItemClickLisner(new studentAdapter.OnItemClickLisne() {
             @Override
