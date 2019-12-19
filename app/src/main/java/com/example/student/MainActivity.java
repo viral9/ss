@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         etName.setText(getIntent().getStringExtra("name"));
 
+        imageviewmain.setTag(null);
 
     }
 
@@ -141,11 +142,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             etName.setError("enter correct");
             return;
         }
-
-        /*else if(imageviewmain.setImageBitmap(null) == drawable)
+        else if(imageviewmain.getTag() == null)
         {
             Toast.makeText(this, "Add Image", Toast.LENGTH_SHORT).show();
-        }*/
+            return;
+        }
+
         else
         {
             Toast.makeText(MainActivity.this,"submit successful",Toast.LENGTH_LONG).show();
@@ -314,7 +316,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dir.mkdir();
                 File file = new File(dir,System.currentTimeMillis()+".jpg");
                 filestrpath = file.getPath();
-                Toast.makeText(this, filestrpath, Toast.LENGTH_SHORT).show();
+                imageviewmain.setTag(filestrpath);
+                //Toast.makeText(this, filestrpath, Toast.LENGTH_SHORT).show();
                 try {
                     outputStream =  new FileOutputStream(file);
                 } catch (FileNotFoundException e) {
@@ -339,6 +342,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             File dir = new File(filepath.getAbsolutePath()+"/image/");
             dir.mkdir();
             File file = new File(dir,System.currentTimeMillis()+".jpg");
+
+            filestrpath = file.getPath();
+            imageviewmain.setTag(filestrpath);
             try {
                 outputStream =  new FileOutputStream(file);
             } catch (FileNotFoundException e) {
