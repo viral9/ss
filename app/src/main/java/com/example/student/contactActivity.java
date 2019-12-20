@@ -3,6 +3,7 @@ package com.example.student;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.content.ContentResolver;
@@ -22,7 +23,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class contactActivity extends AppCompatActivity {
+public class contactActivity extends AppCompatActivity  {
     ListView listViewcontact;
     ArrayList<String> arrayList;
     public static final int REQUEST_READ_CONTACTS = 79;

@@ -2,6 +2,8 @@ package com.example.student;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,13 +22,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class print extends AppCompatActivity implements View.OnClickListener {
+public class print extends AppCompatActivity   implements  View.OnClickListener {
     //TextView tvStudentData;
    // EditText etStudent;
     //Button btnAddStudent,btnDialog;
     FloatingActionButton feb;
     RecyclerView recyclerView;
-    Button btncontact;
+    Button btncontact,btntab;
     //RecyclerView.Adapter recadapter;
     studentAdapter recadapter;
     RecyclerView.LayoutManager layour;
@@ -139,6 +141,8 @@ public class print extends AppCompatActivity implements View.OnClickListener {
         //tvStudentData = findViewById(R.id.tv2);
         //btnDialog = findViewById(R.id.btnDialog);
         //btnDialog.setOnClickListener(this);
+        btntab = findViewById(R.id.btntab);
+        btntab.setOnClickListener(this);
         feb = findViewById(R.id.floatingActionButton);
         feb.setOnClickListener(this);
         btncontact = findViewById(R.id.btncontact);
@@ -173,6 +177,10 @@ public class print extends AppCompatActivity implements View.OnClickListener {
                 Intent intentcon = new Intent(print.this,contactActivity.class);
                 startActivity(intentcon);
                 break;
+            case R.id.btntab:
+                Intent inttab = new Intent(print.this,tabActivity.class);
+                startActivity(inttab);
+
         }
     }
 

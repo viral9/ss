@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.app.Activity;
@@ -29,6 +30,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -45,10 +48,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int gallary = 1,camera = 2;
     int c_month,c_year,c_day;
     OutputStream outputStream;
+    TabLayout tabLayout;
+    ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         initViews();
 
@@ -100,8 +106,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnclr = findViewById(R.id.btnclear);
         btnimage = findViewById(R.id.btnImage);
         imageviewmain = findViewById(R.id.imgviewmain);
+
+        //tabLayout.setTab
         //btncard = findViewById(R.id.btncard);
         //btncard.setOnClickListener(this);
+
         btnclr.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
         btnimage.setOnClickListener(this);
