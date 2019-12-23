@@ -27,23 +27,24 @@ public class tabActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tab);
         viewPager = findViewById(R.id.viewpager);
         tabLayout = findViewById(R.id.tabLayout);
-        toolbar = findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar);
+        //toolbar = findViewById(R.id.toolbar2);
+        //setSupportActionBar(toolbar);
         tabLayout.addTab(tabLayout.newTab().setText("first"));
         tabLayout.addTab(tabLayout.newTab().setText("second"));
-        setTitle("tab view");
+
+        //setTitle("tab view");
 
         final pageAdapter adapter = new pageAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
-        tabLayout.setOnClickListener(new View.OnClickListener() {
+        /*tabLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(tabActivity.this, "it is clickable", Toast.LENGTH_SHORT).show();
                 /*Fragment f ;
-                f = adapter.getItem(0);*/
+                f = adapter.getItem(0);
                 viewPager.setCurrentItem(0);
             }
-        });
+        });*/
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

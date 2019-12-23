@@ -24,16 +24,9 @@ public class pageAdapter extends FragmentStatePagerAdapter  {
             case 0:
                 FirstFragment firstFragment = new FirstFragment();
                 return firstFragment;
-
             case 1:
                 SecoundFragment secoundFragment = new SecoundFragment();
                 return secoundFragment;
-            case 2:
-                print print = new print();
-                //return print;
-                //MainActivity mainActivity = new MainActivity();
-                //return mainActivity;
-
             default:
                 return null;
 

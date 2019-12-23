@@ -16,6 +16,7 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import androidx.fragment.app.Fragment;
 
 import android.provider.ContactsContract;
 import android.widget.SimpleCursorAdapter;
@@ -23,7 +24,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class contactActivity extends AppCompatActivity  {
+public class contactActivity extends AppCompatActivity   {
     ListView listViewcontact;
     ArrayList<String> arrayList;
     public static final int REQUEST_READ_CONTACTS = 79;
