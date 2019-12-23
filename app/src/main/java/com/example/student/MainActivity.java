@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSubmit =findViewById(R.id.btnsub);
         tvDob = findViewById(R.id.tvdob);
         btnclr = findViewById(R.id.btnclear);
-        btnimage = findViewById(R.id.btnImage);
+        //btnimage = findViewById(R.id.btnImage);
         imageviewmain = findViewById(R.id.imgviewmain);
 
         //tabLayout.setTab
@@ -113,10 +113,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnclr.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
-        btnimage.setOnClickListener(this);
+        //btnimage.setOnClickListener(this);
 
         etName.setText(getIntent().getStringExtra("name"));
-
+        imageviewmain.setOnClickListener(this);
         imageviewmain.setTag(null);
 
     }
@@ -177,6 +177,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etName.setText(" ");
         etRollNo.setText(" ");
         tvDob.setText("Add DOB");
+
+
+        imageviewmain.setImageResource(R.drawable.s_profile_place_holder);
+
         etName.requestFocus();
 
     }
@@ -190,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnclear:
                 clearData();
                 break;
-            case R.id.btnImage:
+            case R.id.imgviewmain:
                 showpictureDialog();
 
                 break;

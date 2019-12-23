@@ -1,7 +1,14 @@
 package com.example.student.ui.first;
 
+import androidx.annotation.ContentView;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +20,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.student.DialogActivity;
+import com.example.student.MainActivity;
 import com.example.student.R;
 
 public class FirstFragment extends Fragment {
@@ -27,8 +36,22 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        //return View view = inflater.inflate(R.layout.first_fragment,container,false);
-        return inflater.inflate(R.layout.first_fragment, container, false);
+
+        View view = inflater.inflate(R.layout.activity_main,container,false);
+
+        //Context context = getContext();
+       /* FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment,MainActivity.class);
+        fragmentTransaction.commit();
+        //final Dialog dialog = new Dialog(FirstFragment.class);
+        //getContext();*/
+        //Context context = getContext(R.layout.activity_main);
+        //dialog.setContentView(R.layout.activity_main);
+
+
+        return view ;
+        //return inflater.inflate(R.layout.activity_main, container, false);
 
 
     }

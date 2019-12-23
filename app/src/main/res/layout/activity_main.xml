@@ -8,7 +8,8 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
- <!-- <TextView
+
+    <!-- <TextView
         android:id="@+id/tvage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,23 +24,23 @@
 
     >-->
 
- <Button
-     android:id="@+id/btnsub"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btnsub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-     android:layout_marginBottom="@dimen/_70sdp"
-     android:background="#87ceeb"
-     android:elevation="@dimen/_20sdp"
-     android:padding="@dimen/_5sdp"
-     android:text="submit"
-     android:textSize="@dimen/_20ssp"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/_70sdp"
+        android:background="#87ceeb"
+        android:elevation="@dimen/_20sdp"
+        android:padding="@dimen/_5sdp"
+        android:text="submit"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
 
-     />
+        />
 
- <!-- <Button
+    <!-- <Button
         android:id="@+id/btncard"
         android:layout_width="144dp"
         android:layout_height="58dp"
@@ -53,94 +54,97 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />-->
 
- <Button
-     android:id="@+id/btnImage"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
+   <!-- <Button
+        android:id="@+id/btnImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-     android:layout_marginBottom="@dimen/_120sdp"
-     android:background="#87ceeb"
-     android:elevation="@dimen/_20sdp"
-     android:padding="@dimen/_5sdp"
-     android:text="Add image"
-     android:textSize="@dimen/_20ssp"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/_120sdp"
+        android:background="#87ceeb"
+        android:elevation="@dimen/_20sdp"
+        android:padding="@dimen/_5sdp"
+        android:text="Add image"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
 
-     />
+        /> -->
 
- <Button
-     android:id="@+id/btnclear"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btnclear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-     android:layout_marginBottom="@dimen/_20sdp"
-     android:background="#87ceeb"
-     android:elevation="@dimen/_20sdp"
-     android:padding="@dimen/_5sdp"
-     android:text="clear"
-     android:textSize="@dimen/_20ssp"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.5"
-     app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="#87ceeb"
+        android:elevation="@dimen/_20sdp"
+        android:padding="@dimen/_5sdp"
+        android:text="clear"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
- <EditText
-     android:id="@+id/etname"
-     android:layout_width="285dp"
-     android:layout_height="67dp"
-     android:layout_marginTop="@dimen/_30sdp"
-     android:layout_marginEnd="68dp"
-     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-     android:ems="10"
+    <EditText
+        android:id="@+id/etname"
+        android:layout_width="285dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="68dp"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        android:ems="10"
 
 
-     android:hint="name"
-     android:textSize="@dimen/_20ssp"
-     app:layout_constraintBottom_toTopOf="@+id/etrollno"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintTop_toTopOf="parent" />
+        android:hint="name"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintBottom_toTopOf="@+id/etrollno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
- <TextView
-     android:id="@+id/tvdob"
-     android:layout_width="214dp"
-     android:layout_height="48dp"
-     android:layout_marginTop="20dp"
-     android:layout_marginRight="@dimen/_20sdp"
-     android:layout_marginBottom="@dimen/_50sdp"
-     android:text="Add DOB"
-     android:textSize="@dimen/_20ssp"
-     app:layout_constraintBottom_toTopOf="@+id/btnsub"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.335"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/etrollno"
-     app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/tvdob"
+        android:layout_width="214dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:text="Add DOB"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintBottom_toTopOf="@+id/btnsub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.335"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etrollno"
+        app:layout_constraintVertical_bias="0.0" />
 
- <EditText
-     android:id="@+id/etrollno"
-     android:layout_width="278dp"
-     android:layout_height="64dp"
-     android:layout_marginEnd="68dp"
-     android:ems="10"
-     android:hint="rollno"
-     android:inputType="number"
-     android:textSize="@dimen/_20ssp"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/etname"
+    <EditText
+        android:id="@+id/etrollno"
+        android:layout_width="278dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:hint="rollno"
+        android:inputType="number"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etname"
 
-     />
+        />
 
- <ImageView
-     android:id="@+id/imgviewmain"
-     android:layout_width="221dp"
-     android:layout_height="176dp"
-     app:layout_constraintBottom_toTopOf="@+id/btnImage"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.5"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/tvdob"
-     app:srcCompat="@drawable/s_profile_place_holder" />
+    <ImageView
+        android:id="@+id/imgviewmain"
+        android:layout_width="221dp"
+        android:layout_height="176dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvdob"
+        app:srcCompat="@drawable/s_profile_place_holder" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
