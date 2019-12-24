@@ -54,7 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />-->
 
-   <!-- <Button
+    <!-- <Button
         android:id="@+id/btnImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -132,16 +132,27 @@
 
         />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/imgviewmain"
-        android:layout_width="241dp"
-        android:layout_height="193dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnImage"
+        android:layout_width="221dp"
+        android:layout_height="176dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnsub"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvdob"
-        app:srcCompat="@drawable/s_profile_place_holder" />
+        app:srcCompat="@drawable/s_profile_place_holder" /> -->
+
+    <ImageView
+        android:id="@+id/imgviewmain"
+        android:layout_width="221dp"
+        android:layout_height="197dp"
+        android:src="@drawable/s_profile_place_holder"
+        app:layout_constraintBottom_toTopOf="@+id/btnsub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvdob"
+        app:layout_constraintVertical_bias="0.662" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

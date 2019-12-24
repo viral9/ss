@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
@@ -32,6 +33,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.student.ui.first.FirstFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.File;
@@ -41,7 +43,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends FragmentActivity implements View.OnClickListener {
     EditText etName, etRollNo,eage;
     TextView textView, tvDob;
     ImageView imageviewmain;
@@ -59,6 +61,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         initViews();
+        //viewPager = findViewById(R.id.vpmain);
+        //viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+        //FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        //fragmentTransaction.add(R.id.main,new FirstFragment());
+        //fragmentTransaction.commit();
         //Bundle bundle = getIntent().getExtras();
 
         //etName.setText(getIntent().getStringExtra("name"));
@@ -119,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //btnimage.setOnClickListener(this);
 
         etName.setText(getIntent().getStringExtra("name"));
+
         imageviewmain.setOnClickListener(this);
         imageviewmain.setTag(null);
 
@@ -178,7 +186,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
    private void clearData(){
         etName.setText(" ");
+       etName.setHint("name");
         etRollNo.setText(" ");
+       etRollNo.setHint("rollno");
         tvDob.setText("Add DOB");
 
 

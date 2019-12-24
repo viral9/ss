@@ -14,7 +14,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,11 +31,6 @@ public class FirstFragment extends Fragment {
     public static FirstFragment newInstance() {
         return new FirstFragment();
     }
-    public static Context contextOfApplication;
-    public static Context getContextOfApplication()
-    {
-        return contextOfApplication;
-    }
 
     @Nullable
     @Override
@@ -45,7 +39,10 @@ public class FirstFragment extends Fragment {
            // Intent i = new Intent();
             //getActivity();
             //startActivity(i);
-        //container = ((MainActivity) getActivity()).getContentResolver()
+        //Fragment newFragment = new FirstFragment();
+        //FragmentTransaction ft = getFragmentManager().beginTransaction();
+        //ft.replace(R.id.viewpager,newFragment).commit();
+
 
         View view = inflater.inflate(R.layout.activity_main,container,false);
 
@@ -61,7 +58,6 @@ public class FirstFragment extends Fragment {
 
         //Intent in = new Intent(getActivity(),MainActivity.class);
         //startActivity(in);
-
         return view ;
         //return inflater.inflate(R.layout.activity_main, container, false);
 
