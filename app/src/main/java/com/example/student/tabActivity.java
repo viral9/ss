@@ -31,6 +31,7 @@ public class tabActivity extends AppCompatActivity {
         //setSupportActionBar(toolbar);
         tabLayout.addTab(tabLayout.newTab().setText("first"));
         tabLayout.addTab(tabLayout.newTab().setText("second"));
+        //tabLayout.addTab(tabLayout.newTab().setText("main"));
 
         //setTitle("tab view");
 

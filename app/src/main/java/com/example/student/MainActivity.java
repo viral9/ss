@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
@@ -57,8 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         initViews();
+        //Bundle bundle = getIntent().getExtras();
 
-        etName.setText(getIntent().getStringExtra("name"));
+        //etName.setText(getIntent().getStringExtra("name"));
         //Intent i = new Intent(MainActivity.this,print.class);
         //etName.setText("hello");
 

@@ -134,17 +134,14 @@
 
     <ImageView
         android:id="@+id/imgviewmain"
-        android:layout_width="221dp"
-        android:layout_height="176dp"
+        android:layout_width="241dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintBottom_toTopOf="@+id/btnImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvdob"
         app:srcCompat="@drawable/s_profile_place_holder" />
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
