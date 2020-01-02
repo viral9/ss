@@ -14,7 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tabActivity"></activity>
+        <activity android:name=".gallry"></activity>
+        <activity android:name=".sidemenu2" />
+        <activity
+            android:name=".sidemenu"
+            android:label="@string/title_activity_sidemenu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".tabActivity" />
         <activity android:name=".secound" />
         <activity android:name=".first" />
         <activity android:name=".contactActivity" />

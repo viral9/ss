@@ -28,7 +28,7 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
     //Button btnAddStudent,btnDialog;
     FloatingActionButton feb;
     RecyclerView recyclerView;
-    Button btncontact,btntab;
+    Button btncontact,btntab,btnside,btnside2;
     //RecyclerView.Adapter recadapter;
     studentAdapter recadapter;
     RecyclerView.LayoutManager layour;
@@ -147,6 +147,10 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
         feb.setOnClickListener(this);
         btncontact = findViewById(R.id.btncontact);
         btncontact.setOnClickListener(this);
+        btnside = findViewById(R.id.btnside);
+        btnside.setOnClickListener(this);
+        btnside2 = findViewById(R.id.btnside2);
+        btnside2.setOnClickListener(this);
         //lvStudent =findViewById(R.id.lvdata);
         //etStudent = findViewById(R.id.etEditStudent);
         //etStudent.setEnabled(false);
@@ -180,6 +184,13 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
             case R.id.btntab:
                 Intent inttab = new Intent(print.this,tabActivity.class);
                 startActivity(inttab);
+            case R.id.btnside:
+                Intent intside = new Intent(print.this,sidemenu.class);
+                startActivity(intside);
+            case R.id.btnside2:
+                Intent intside2 = new Intent(print.this,sidemenu2.class);
+                startActivity(intside2);
+
 
         }
     }
