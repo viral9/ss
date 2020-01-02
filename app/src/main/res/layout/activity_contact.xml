@@ -6,16 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".contactActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.student.ui.first.FirstFragment"
-        android:layout_width="349dp"
-        android:layout_height="587dp" />
-
     <ListView
         android:id="@+id/lvcontact"
-        android:layout_width="@dimen/_200sdp"
-        android:layout_height="@dimen/_400sdp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </FrameLayout>

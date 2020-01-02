@@ -58,6 +58,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Add student data");
 
 
         initViews();
@@ -209,11 +210,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
             case R.id.imgviewmain:
                 showpictureDialog();
-
                 break;
-
-
-
         }
     }
 

@@ -18,6 +18,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.student.DialogActivity;
@@ -25,6 +27,9 @@ import com.example.student.MainActivity;
 import com.example.student.R;
 
 public class FirstFragment extends Fragment {
+
+    TextView tvDOB;
+    ImageView ivPhoto;
 
     private FirstViewModel mViewModel;
 
@@ -46,6 +51,9 @@ public class FirstFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_main,container,false);
 
+        initViews(view);
+
+
         //Context context = getContext();
        /* FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -62,6 +70,16 @@ public class FirstFragment extends Fragment {
         //return inflater.inflate(R.layout.activity_main, container, false);
 
 
+    }
+
+    private void initViews(View view) {
+        tvDOB = view.findViewById(R.id.tvdob);
+        tvDOB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
