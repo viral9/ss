@@ -127,6 +127,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         //btnimage.setOnClickListener(this);
 
         etName.setText(getIntent().getStringExtra("name"));
+        etRollNo.setText(getIntent().getStringExtra("roll"));
+        tvDob.setText(getIntent().getStringExtra("dob"));
 
         imageviewmain.setOnClickListener(this);
         imageviewmain.setTag(null);
