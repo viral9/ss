@@ -39,7 +39,7 @@
         android:id="@+id/bottom_sheet"
         app:layout_behavior="@string/bottom_sheet_behavior"
         app:behavior_hideable="true"
-        app:behavior_peekHeight="@dimen/_100sdp"
+        app:behavior_peekHeight="@dimen/_50sdp"
         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

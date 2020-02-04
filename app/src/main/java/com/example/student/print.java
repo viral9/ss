@@ -28,7 +28,7 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
     //Button btnAddStudent,btnDialog;
     FloatingActionButton feb;
     RecyclerView recyclerView;
-    Button btncontact,btntab,btnside,btnside2,btnweb,btnseek,btnupseek;
+    Button btncontact,btntab,btnside,btnside2,btnweb,btnseek,btnupseek,btnbro,btnviewbt,btndialog,btncal;
     //RecyclerView.Adapter recadapter;
     studentAdapter recadapter;
     RecyclerView.LayoutManager layour;
@@ -37,6 +37,7 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
     //ArrayList<String> arrayList;
     //ArrayAdapter<String> adapter;
     String filepath;
+    TextView tvtest;
     ArrayList<card> datalist = new ArrayList<>();
     String s = null;
 
@@ -46,7 +47,14 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
         super.onCreate(savedInstanceState);
         setTitle("Add Student");
         setContentView(R.layout.activity_print);
+        tvtest = findViewById(R.id.tvtest);
+        //tvtest.setTag("hiii");
+        //tvtest.setText(tvtest.getTag().toString());
+        //tvtest.setText("hello\ni am\nviral\nnice \nto \nmeet you");
+        //tvtest.setLineSpacing(2,2);
+
         initViews();
+
 
 
 
@@ -149,6 +157,8 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
         btnseek.setOnClickListener(this);
         btnupseek = findViewById(R.id.btnseek_up);
         btnupseek.setOnClickListener(this);
+        btnbro = findViewById(R.id.btnbro);
+        btnbro.setOnClickListener(this);
         feb = findViewById(R.id.floatingActionButton);
         feb.setOnClickListener(this);
         btncontact = findViewById(R.id.btncontact);
@@ -157,6 +167,12 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
         btnside.setOnClickListener(this);
         btnside2 = findViewById(R.id.btnside2);
         btnside2.setOnClickListener(this);
+        btnviewbt = findViewById(R.id.btnviewbt);
+        btnviewbt.setOnClickListener(this);
+        btndialog = findViewById(R.id.btndialog);
+        btndialog.setOnClickListener(this);
+        btncal = findViewById(R.id.btncal);
+        btncal.setOnClickListener(this);
         //lvStudent =findViewById(R.id.lvdata);
         //etStudent = findViewById(R.id.etEditStudent);
         //etStudent.setEnabled(false);
@@ -170,12 +186,12 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
                 Intent i = new Intent(print.this,MainActivity.class);
                 //startActivity(i);
                 startActivityForResult(i,1);
-                break;
-            case R.id.btnDialog:
+                break;*/
+            case R.id.btndialog:
                Intent intent = new Intent(print.this, DialogActivity.class);
                 startActivity(intent);
                 //startActivityForResult(intent,1);
-                break;*/
+                break;
             case R.id.floatingActionButton:
                 //showmsg();
                 Intent i = new Intent(print.this,MainActivity.class);
@@ -211,9 +227,44 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
                 Intent intseek_up = new Intent(print.this,up_seek.class);
                 startActivity(intseek_up);
                 break;
+            case R.id.btnbro:
+                Intent intbro = new Intent(print.this,brodcasttest.class);
+                startActivity(intbro);
+                break;
+            case R.id.btncal:
+                Intent intcal = new Intent(print.this,calender.class);
+                startActivity(intcal);
+                break;
+            case R.id.btnviewbt:
 
+                if(btncontact.getVisibility()== View.GONE)
+                {
+                    btncontact.setVisibility(View.VISIBLE);
+                    btndialog.setVisibility(View.VISIBLE);
+                    btntab.setVisibility(View.VISIBLE);
+                    btnside.setVisibility(View.VISIBLE);
+                    btnside2.setVisibility(View.VISIBLE);
+                    btnweb.setVisibility(View.VISIBLE);
+                    btnseek.setVisibility(View.VISIBLE);
+                    btnupseek.setVisibility(View.VISIBLE);
+                    btnbro.setVisibility(View.VISIBLE);
+                    btncal.setVisibility(View.VISIBLE);
 
-
+                }
+                else
+                {
+                    btncontact.setVisibility(View.GONE);
+                    btndialog.setVisibility(View.GONE);
+                    btntab.setVisibility(View.GONE);
+                    btnside.setVisibility(View.GONE);
+                    btnside2.setVisibility(View.GONE);
+                    btnweb.setVisibility(View.GONE);
+                    btnseek.setVisibility(View.GONE);
+                    btnupseek.setVisibility(View.GONE);
+                    btnbro.setVisibility(View.GONE);
+                    btncal.setVisibility(View.GONE);
+                }
+                break;
         }
     }
 
