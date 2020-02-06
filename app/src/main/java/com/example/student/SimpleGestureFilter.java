@@ -15,8 +15,8 @@ public class SimpleGestureFilter extends GestureDetector.SimpleOnGestureListener
     public final static int MODE_DYNAMIC = 2;
 
     private final static int ACTION_FAKE = -13;
-    private int swipe_Min_Distance = 100;
-    private int swipe_Max_Distance = 350;
+    private int swipe_Min_Distance = 50;
+    private int swipe_Max_Distance = 250;
     private int swipe_Min_Velocity = 100;
     private int MODE = MODE_DYNAMIC;
     private boolean running = true;
@@ -31,7 +31,7 @@ public class SimpleGestureFilter extends GestureDetector.SimpleOnGestureListener
     {
         this.context = context;
         this.detector = new GestureDetector(context,this);
-        this.listener = (SimpleGestureListener) sgl;
+        this.listener = sgl;
 
     }
     public void onTouchEvent(MotionEvent event)

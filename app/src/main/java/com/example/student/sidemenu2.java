@@ -24,17 +24,17 @@ public class sidemenu2 extends AppCompatActivity implements  NavigationView.OnNa
         //Toolbar toolbar = findViewById(R.id.toolbarside2);
         //setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.side_layout2);
-       // NavigationView navigationView = findViewById(R.id.side_layout2);
-       // navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.bar_open,R.string.bar_Close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        /*if(savedInstanceState == null)
+        if(savedInstanceState == null)
         {
             getSupportFragmentManager().beginTransaction().replace(R.id.side_layout2, new Add_student_fragment()).commit();
             navigationView.setCheckedItem(R.id.main);
-        }*/
+        }
 
     }
 
@@ -57,7 +57,9 @@ public class sidemenu2 extends AppCompatActivity implements  NavigationView.OnNa
         {
             case R.id.main:
                 getSupportFragmentManager().beginTransaction().replace(R.id.side_layout2, new Add_student_fragment()).commit();
-
+                break;
+            case R.id.print:
+                getSupportFragmentManager().beginTransaction().replace(R.id.side_layout2,new print_fragment()).commit();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

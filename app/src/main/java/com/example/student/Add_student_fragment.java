@@ -14,7 +14,7 @@ public class Add_student_fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
-        return inflater.inflate(R.layout.activity_main,container,false);
+        return inflater.inflate(R.layout.activity_sidemenu2,container,false);
 
     }
 }

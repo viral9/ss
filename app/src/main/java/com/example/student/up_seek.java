@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,13 +18,13 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 public class up_seek extends AppCompatActivity implements SimpleGestureFilter.SimpleGestureListener {
 
-    //private SimpleGestureFilter detector;
+    private SimpleGestureFilter detector;
 
     BottomSheetBehavior bottomSheetBehavior;
     TextView tvstatsus;
     Button btnexpand,btncollapse;
 
-    Swipe swipe;
+    //Swipe swipe;
 
 
     @Override
@@ -31,32 +32,32 @@ public class up_seek extends AppCompatActivity implements SimpleGestureFilter.Si
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_up_seek);
         View bottomsheet = findViewById(R.id.bottom_sheet);
-        //detector = new SimpleGestureFilter(this,this);
+        detector = new SimpleGestureFilter(this,this);
 
-        swipe = new Swipe();
+        /*swipe = new Swipe();
         swipe.setListener(new SimpleSwipeListener() {
             @Override
             public void onSwipingLeft(MotionEvent event) {
-                Toast.makeText(up_seek.this, "swipe left", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(up_seek.this, "swipe left", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipingRight(MotionEvent event) {
-                Toast.makeText(up_seek.this, "swipe right", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(up_seek.this, "swipe right", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipingUp(MotionEvent event) {
-                Toast.makeText(up_seek.this, "swipe up", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(up_seek.this, "swipe up", Toast.LENGTH_SHORT).show();
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
 
             }
 
             @Override
             public void onSwipingDown(MotionEvent event) {
-                Toast.makeText(up_seek.this, "swipe down", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(up_seek.this, "swipe down", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
 
@@ -64,18 +65,38 @@ public class up_seek extends AppCompatActivity implements SimpleGestureFilter.Si
         tvstatsus = findViewById(R.id.tvstatus);
         btnexpand = findViewById(R.id.btn_expand);
         btncollapse = findViewById(R.id.btn_collapse);
+
+        int a ;
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+
+
         btnexpand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                if(bottomSheetBehavior.getState()==4)
+                {
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    btnexpand.setText("collapse");
+                }
+                else
+                {
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    btnexpand.setText("expand");
+                }
+
+
             }
         });
+        btncollapse.setVisibility(View.GONE);
+
         btncollapse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
             }
         });
+
 
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
@@ -84,6 +105,7 @@ public class up_seek extends AppCompatActivity implements SimpleGestureFilter.Si
                 {
                     case BottomSheetBehavior.STATE_COLLAPSED:
                         tvstatsus.setText("collapse");
+
                         break;
                     case BottomSheetBehavior.STATE_DRAGGING:
                         tvstatsus.setText("dragging");
@@ -113,8 +135,8 @@ public class up_seek extends AppCompatActivity implements SimpleGestureFilter.Si
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-       // this.detector.onTouchEvent(ev);
-        swipe.dispatchTouchEvent(ev);
+        this.detector.onTouchEvent(ev);
+        //swipe.dispatchTouchEvent(ev);
         return super.dispatchTouchEvent(ev);
     }
 

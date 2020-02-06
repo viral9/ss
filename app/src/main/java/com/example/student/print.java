@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,7 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
     //Button btnAddStudent,btnDialog;
     FloatingActionButton feb;
     RecyclerView recyclerView;
-    Button btncontact,btntab,btnside,btnside2,btnweb,btnseek,btnupseek,btnbro,btnviewbt,btndialog,btncal;
+    Button btncontact,btntab,btnside,btnside2,btnweb,btnseek,btnupseek,btnbro,btnviewbt,btndialog,btncal,btnradio;
     //RecyclerView.Adapter recadapter;
     studentAdapter recadapter;
     RecyclerView.LayoutManager layour;
@@ -36,10 +37,13 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
     //ListView lvStudent;
     //ArrayList<String> arrayList;
     //ArrayAdapter<String> adapter;
+    Intent intent;
     String filepath;
     TextView tvtest;
     ArrayList<card> datalist = new ArrayList<>();
     String s = null;
+
+    Context cp = print.this;
 
 
     @Override
@@ -173,6 +177,8 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
         btndialog.setOnClickListener(this);
         btncal = findViewById(R.id.btncal);
         btncal.setOnClickListener(this);
+        btnradio = findViewById(R.id.btnradio);
+        btnradio.setOnClickListener(this);
         //lvStudent =findViewById(R.id.lvdata);
         //etStudent = findViewById(R.id.etEditStudent);
         //etStudent.setEnabled(false);
@@ -188,52 +194,48 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
                 startActivityForResult(i,1);
                 break;*/
             case R.id.btndialog:
-               Intent intent = new Intent(print.this, DialogActivity.class);
-                startActivity(intent);
+                callintentact(DialogActivity.class);
+
                 //startActivityForResult(intent,1);
                 break;
             case R.id.floatingActionButton:
                 //showmsg();
-                Intent i = new Intent(print.this,MainActivity.class);
+                intent = new Intent(print.this,MainActivity.class);
                 //startActivity(i);
 
-                startActivityForResult(i,1);
+                startActivityForResult(intent,1);
                 break;
             case R.id.btncontact:
-                Intent intentcon = new Intent(print.this,contactActivity.class);
-                startActivity(intentcon);
+                callintentact(contactActivity.class);
                 break;
             case R.id.btntab:
-                 Intent inttab = new Intent(print.this,tabActivity.class);
-                startActivity(inttab);
+                callintentact(tabActivity.class);
                 break;
             case R.id.btnside:
-                Intent intside = new Intent(print.this,sidemenu.class);
-                startActivity(intside);
+                callintentact(sidemenu.class);
                 break;
             case R.id.btnside2:
-                Intent intside2 = new Intent(print.this,sidemenu2.class);
-                startActivity(intside2);
+                callintentact(sidemenu2.class);
                 break;
             case R.id.btnweb:
-                Intent intweb = new Intent(print.this,web.class);
-                startActivity(intweb);
+                callintentact(web.class);
                 break;
             case R.id.btnseek:
-                Intent intseek = new Intent(print.this,seekbar.class);
-                startActivity(intseek);
+                callintentact(seekbar.class);
                 break;
             case R.id.btnseek_up:
-                Intent intseek_up = new Intent(print.this,up_seek.class);
-                startActivity(intseek_up);
+                callintentact(up_seek.class);
                 break;
             case R.id.btnbro:
-                Intent intbro = new Intent(print.this,brodcasttest.class);
-                startActivity(intbro);
+                callintentact(brodcasttest.class);
                 break;
             case R.id.btncal:
-                Intent intcal = new Intent(print.this,calender.class);
-                startActivity(intcal);
+                //intent = new Intent(print.this,calender.class);
+                callintentact(calender.class);
+                //startActivity(intent);
+                break;
+            case R.id.btnradio:
+                callintentact(radio.class);
                 break;
             case R.id.btnviewbt:
 
@@ -249,6 +251,7 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
                     btnupseek.setVisibility(View.VISIBLE);
                     btnbro.setVisibility(View.VISIBLE);
                     btncal.setVisibility(View.VISIBLE);
+                    btnradio.setVisibility(View.VISIBLE);
 
                 }
                 else
@@ -263,10 +266,18 @@ public class print extends AppCompatActivity   implements  View.OnClickListener 
                     btnupseek.setVisibility(View.GONE);
                     btnbro.setVisibility(View.GONE);
                     btncal.setVisibility(View.GONE);
+                    btnradio.setVisibility(View.GONE);
                 }
                 break;
         }
     }
+
+
+    void callintentact(Class classname) {
+        Intent i = new Intent(print.this,classname);
+        startActivity(i);
+    }
+
 
     /*private void showmsg() {
         Toast.makeText(this, "this is floating", Toast.LENGTH_SHORT).show();
